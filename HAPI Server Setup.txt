@@ -1,0 +1,24 @@
+1) On AWS Ubuntu micro instance
+2) setup JDK 1.8
+
+   sudo add-apt-repository ppa:webupd8team/java
+	sudo apt-get update
+	sudo apt-get install oracle-java8-installer
+	sudo apt-get install oracle-java8-set-default
+3) Setup Tomcat7
+
+    sudo apt-get update
+    sudo apt-get install tomcat7
+4) install Git and download the latest code
+	(Make changes to FhirServerConfig.java)
+	
+5) Install Maven
+   sudo apt-get install maven
+   export MAVEN_OPTS="-Xmx4G"
+   
+6) mvn clean install on \hapi-fhir-master
+
+7) copying  hapi-fhir-jaxrsserver-example.war to webapps folder and restarting tomcat7.
+
+  
+8) hapi-fhir-jaxrsserver-example is not starting.. 

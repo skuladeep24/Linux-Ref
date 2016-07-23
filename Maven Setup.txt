@@ -1,0 +1,24 @@
+1) searchc maven packages:
+
+apt-cache search maven
+
+2) install
+sudo apt-get install maven
+
+3. Verification
+   mvn -version
+   
+4) maven installation dir
+
+  /usr/share/maven.
+  
+5) config files
+
+  /etc/maven
+
+  
+  http://www.mkyong.com/maven/how-to-deploy-maven-based-war-file-to-tomcat/
+
+
+to increase heap size...
+export MAVEN_OPTS="-Xmx4G"

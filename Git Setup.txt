@@ -1,0 +1,34 @@
+
+https://www.digitalocean.com/community/tutorials/how-to-install-git-on-ubuntu-14-04
+
+
+
+
+git config --global user.name "skuladeep24"
+git config --global user.email "skuladeep24@gmail.com"
+git config --list
+
+or 
+nano ~/.gitconfig
+
+
+git clone --bare https://github.com/jamesagnew/hapi-fhir.git
+
+to download repo:
+*******************************
+git clone https://github.com/jamesagnew/hapi-fhir.git
+
+
+1. install git - sudo apt-get install git-core
+2. create a dir for git stuff
+3. go to that dir in terminal and run git clone git://anongit.compiz.org/compiz/plugins/atlantis or whatever repository you want to get from that list -> http://cgit.compiz.org/ (git address is at the bottom of a page with details)
+4. go to freshly created sub-directory and follow the instructions in README file
+
+https://github.com/skuladeep24/hapi-fhir.git
+
+git clone https://github.com/skuladeep24/hapi-fhir.git
+
+git https://github.com/jamesagnew/hapi-fhir.git
+
+
+http://www.liquidweb.com/kb/how-to-install-git-on-ubuntu-14-04/

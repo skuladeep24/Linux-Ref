@@ -1,0 +1,109 @@
+sudo apt-get update
+
+
+sudo apt-get install tomcat7
+
+
+sudo nano /etc/default/tomcat7
+
+
+JAVA_OPTS="-Djava.security.egd=file:/dev/./urandom -Djava.awt.headless=true -Xmx512m -XX:MaxPermSize=256m -XX:+UseConcMarkSweepGC"
+
+
+sudo service tomcat7 restart
+
+
+http://server_IP_address:8080
+
+http://52.42.74.16:8080
+http://ec2-52-42-74-16.us-west-2.compute.amazonaws.com:8080
+
+
+sudo apt-get install tomcat7-docs tomcat7-admin tomcat7-examples
+
+sudo apt-get install  tomcat7-admin tomcat7-examples
+
+optional
+
+  sudo apt-get install default-jdk
+  
+  sudo apt-get install ant git
+  
+  sudo nano /etc/tomcat7/tomcat-users.xml
+  
+  
+  
+  32 bit or 64 bit
+  
+  file /sbin/init
+  
+  
+  <tomcat-users>
+    <user username="admin" password="password" roles="manager-gui,admin-gui"/>
+</tomcat-users>
+
+<role rolename="manager-gui"/>
+<role rolename="manager-script"/>
+<role rolename="manager-jmx"/>
+<role rolename="manager-status"/>
+<user username="tomcat" password="password" roles="manager-gui,manager-script,manager-jmx,manager-status"/>
+
+
+sudo service tomcat7 restart
+
+http://52.42.74.46:8080/manager/html
+
+troubleshoot:
+
+telnet localhost 8080
+netstat -a
+52.42.74.46
+
+
+
+http://www.excelsior-usa.com/articles/tomcat-amazon-ec2-basic.html
+
+http://blog.webagesolutions.com/archives/1379
+
+https://www.digitalocean.com/community/tutorials/how-to-install-apache-tomcat-7-on-ubuntu-14-04-via-apt-get
+
+
+// To reload 
+sudo service tomcat7 reload
+
+// Add Tomacat 7 service to the autostart
+sudo chkconfig tomcat7 on
+
+http://52.42.74.46:8080/hapi-fhir-jpaserver-example/baseDstu2/Patient/
+hapi-fhir-jpaserver-example
+
+
+
+
+If you only exec apt-get install tomcat7,that means you just install the core pkg.
+
+If you want to manage tomcat, that means you have to exec apt-get install tomcat7-admin.
+
+And maybe you want to install many other tomcat7 pkgs, you can apt-get install tomcat7<tab><tab>, it will list other tomcat7 pkgs.
+
+It's not over yet. Tomcat's webapps dir is default at /var/lib/tomcat7/webapps/.
+
+After you install tomcat7-admin, you have to copy the dir to /var/lib/tomcat7/webapps/ by using this command:
+
+cp -r /usr/share/tomcat7-admin/* /var/lib/tomcat7/webapps/
+
+And you can find other tomcat7.* pkgs are all expand to /usr/share/${pkg_name}/ dir. Just copy them to /var/lib/tomcat7/webapps/. It will works
+
+http://localhost:8080/hapi-fhir-jpaserver-example/baseDstu2/Patient/500?_format=json
+
+
+sudo service --status-all
+
+Run Web application on Port 80
+
+// It will redirect HTTP request data from port 8080 to 80
+sudo /sbin/iptables -t nat -I PREROUTING -p tcp --dport 80 -j REDIRECT --to-port 8080
+sudo /sbin/service iptables save
+
+http://coenraets.org/blog/2011/11/set-up-an-amazon-ec2-instance-with-tomcat-and-mysql-5-minutes-tutorial/
+

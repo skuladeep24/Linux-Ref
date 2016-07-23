@@ -1,0 +1,47 @@
+installing JDK in ubuntu:
+*********************************
+
+sudo add-apt-repository ppa:webupd8team/java
+$ sudo apt-get update
+$ sudo apt-get install oracle-java8-installer
+
+
+export JAVA_HOME=/usr/lib/jvm/java-8-oracle
+
+export JAVA_HOME=/usr/bin
+
+sudo apt-get remove oracle-java8-installer
+
+
+tar -xvf thumbnails-14-09-12.tar.gz
+
+
+
+sudo update-alternatives --install /usr/bin/java java /usr/lib/jvm/oracle_jdk8/jre/bin/java 2000
+
+sudo update-alternatives --install /usr/bin/javac javac /usr/lib/jvm/oracle_jdk8/bin/javac 2000
+
+
+http://www.webupd8.org/2012/01/install-oracle-java-jdk-7-in-ubuntu-via.html
+
+http://www.webupd8.org/2012/09/install-oracle-java-8-in-ubuntu-via-ppa.html
+
+
+sudo add-apt-repository ppa:webupd8team/java
+sudo apt-get update
+sudo apt-get install oracle-java8-installer
+
+sudo apt-get install oracle-java8-set-default
+
+Setting up JAVA_HOME:
+
+Launch Terminal by pressing Ctrl+Alt+T on your keyboard.
+Enter the following command:
+$ gksudo gedit /etc/environment
+Depending on where you installed your Java, you will need to provide the full path. For this example, I installed Oracle JDK 7 in the /usr/lib/jvm/java-7-oracle directory.
+Scroll to the end of the file and enter the following:
+JAVA_HOME=/usr/lib/jvm/java-7-oracle
+export JAVA_HOME
+Save your file and exit gedit.
+Lastly, reload the system PATH with the following command:
+$ . /etc/environment
